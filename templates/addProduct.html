@@ -1,0 +1,71 @@
+{% extends 'index.html' %}
+
+{% block title %}
+  Añadir Producto
+{%- endblock title %}
+
+{% block head %} 
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/addProduct.css') }}"
+/>
+{% endblock head %}
+
+
+{% block content %}
+<div id="add-form">
+    <input
+        type="text"
+        name="nombre"
+        id="nombre"
+        placeholder="Nombre"
+        required
+        v-model="nombre"
+        value=""
+    />
+    <select name="marca" id="marca" v-model="marca">
+        <option value="0">Elija una marca</option>
+        {% for marca in marcas %}
+        <option value="{{ marca.0 }}"> {{ marca.1 }} </option>
+        {% endfor %}
+    </select>
+    <select name="tipo" id="tipo" v-model="tipo">
+        <option value="0">Elija el tipo</option>
+        {% for tipo in tipos %}
+        <option value=" {{tipo.0}} "> {{ tipo.1 }} </option>
+        {% endfor %}
+    </select>
+    <input
+        type="number"
+        name="precio"
+        id="precio"
+        placeholder="Precio"
+        required
+        v-model="precio"
+    />
+    <input type="number" name="costo" id="costo" placeholder="Costo" required v-model="costo" />
+    <input type="number" name="stock" id="stock" placeholder="Stock" required v-model="stock"/>
+    <textarea
+        name="descripcion"
+        id="descripcion"
+        cols="20"
+        rows="6"
+        style="resize: none;"
+        maxlength="255"
+        placeholder="Descripción del producto"
+        v-model="descripcion"
+    ></textarea>
+    <div class="btn-container">
+        <button class="cancelar-btn" v-on:click="inicio">Cancelar</button>
+        <button class="agregar-btn" v-on:click="addProduct">Agregar</button>
+    </div>
+</div>
+{%- endblock content %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="{{ url_for('static', filename='js/addProduct.js') }}"></script>
+{% endblock scripts %}
+
+<!-- 	id_producto	nombre	id_marca	id_tipo	precio	costo	stock	descripcion -->
