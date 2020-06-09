@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href=" {{ url_for('static', filename='css/normalize.css') }} "
+        />
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/main.css') }}"
+        />
+        {% block head %} {% endblock head %}
+        <title>{% block title %} {% endblock %}</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li></li>
+            </ul>
+        </nav>
+        <header>
+            {% if back %}
+            <span>
+                <a href="/"><i class="fa fa-remove" id="back"></i></a>
+                {{ self.title() }}
+            </span>
+            {% else %}
+            <span>{{ self.title() }}</span>
+            <div>
+                <i class="fa fa-search" id="search"></i>
+                <i class="fa fa-bars" id="menuIcon"></i>
+            </div>
+            {% endif %}
+        </header>
+        {% block content %} {% endblock content %}
+         {% block scripts %} {%endblock scripts %}
+    </body>
+</html>
