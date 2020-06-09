@@ -1,0 +1,40 @@
+* {
+    font-family: Arial !important; 
+}
+.hidden {
+    display: none;
+}
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: lightskyblue;
+}
+header > span{
+    padding: 1rem;
+    color: black;
+    font-size: 20px;
+}
+header div {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+header div #menuIcon {
+    font-size: 25px;
+    padding: 0px 10px;
+}
+
+nav {
+    position: absolute;
+    height: 100%;
+    width: 70%;
+    left: 0%;
+    background: rgba(128, 128, 128, 0.678);
+    display: none;
+}
+.fa-remove{
+    font-size: 1.2em;
+}
