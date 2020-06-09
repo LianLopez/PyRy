@@ -1,0 +1,43 @@
+#back {
+    color: black;
+}
+
+#add-form {
+    display: flex;
+    flex-flow: column wrap;
+    padding: 10px;
+}
+#add-form input,
+textarea {
+    margin: 5px 0;
+    outline: none;
+    padding: 15px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+#marca, #tipo{
+    margin: 10px 0 0 0;
+    padding: 10px;
+}
+
+.btn-container{
+    display: grid;
+    margin-top: 10px;
+    grid-template-columns: 45% 45%;
+    align-content: center;
+    justify-content: space-evenly;
+}
+.btn-container button{
+    color: white;
+    padding: 7px 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 550;
+}
+.cancelar-btn{
+    background-color: rgb(226, 78, 78);
+}
+.agregar-btn{
+    background-color: rgb(93, 207, 103);
+}
