@@ -1,0 +1,17 @@
+{% extends 'layout.html' %} 
+{% block title %} Inventory System {% endblock title %} 
+
+{% block head %} {{ super() }}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/index.css') }}"
+/>
+
+{% endblock head %}
+{% block content %}
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+{% endblock scripts %}
